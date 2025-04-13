@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汉字大全 - 20902汉字智能练习平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>汉字大全</h1>
+                <p>20902汉字智能练习平台</p>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="输入汉字搜索">
+                <button id="search-btn">搜索</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="main-content">
+                <div class="hanzi-selector">
+                    <div class="selector-header">
+                        <h2>汉字选择</h2>
+                        <div class="filter-controls">
+                            <select id="filter-type">
+                                <option value="all">全部汉字</option>
+                                <option value="common">常用汉字</option>
+                                <option value="hsk1">HSK 1级</option>
+                                <option value="hsk2">HSK 2级</option>
+                                <option value="hsk3">HSK 3级</option>
+                                <option value="hsk4">HSK 4级</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <button id="prev-page">上一页</button>
+                        <span id="page-info">第 1/1048 页</span>
+                        <button id="next-page">下一页</button>
+                    </div>
+                    <div id="hanzi-grid" class="hanzi-grid">
+                        <!-- 汉字网格将由JavaScript生成 -->
+                    </div>
+                </div>
+
+                <div class="hanzi-display">
+                    <div class="current-hanzi" id="current-hanzi">
+                        <span>请选择汉字</span>
+                    </div>
+                    <div id="writer-container" class="writer-container"></div>
+                    <div class="control-buttons">
+                        <button id="animate-btn" disabled>演示</button>
+                        <button id="practice-btn" disabled>练习</button>
+                        <button id="reset-btn" disabled>重置</button>
+                    </div>
+                    <div id="stroke-count" class="stroke-count">
+                        笔画数: <span>-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ai-assistant">
+                <div class="assistant-header">
+                    <h2>汉字AI助手</h2>
+                    <div class="assistant-controls">
+                        <button id="clear-chat">清空对话</button>
+                    </div>
+                </div>
+                <div class="assistant-info">
+                    <div class="info-row">
+                        <div class="info-item">
+                            <h3>拼音</h3>
+                            <div id="pinyin" class="info-content">-</div>
+                        </div>
+                        <div class="info-item">
+                            <h3>释义</h3>
+                            <div id="definition" class="info-content">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chat-container" class="chat-container">
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="message assistant">
+                            <p>你好！我是汉字AI助手。请选择一个汉字，我可以告诉你关于这个汉字的更多信息，或者回答你的问题。</p>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <textarea id="user-input" placeholder="输入你的问题..." rows="2"></textarea>
+                        <button id="send-btn">发送</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>汉字大全 - 收录了所有20902个Unicode汉字 | 使用 <a href="https://deepseek.com" target="_blank">DeepSeek AI</a> 提供智能问答服务</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
