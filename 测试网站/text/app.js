@@ -595,4 +595,4 @@ function clearChat() {
             </div>
         `;
     }
-} 
+}
